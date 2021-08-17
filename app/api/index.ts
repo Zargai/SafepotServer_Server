@@ -13,6 +13,11 @@ import PickProductcomponent from './routes/MainComponent/PickProductComponent';
 import AboutBannerComponent from './routes/MainComponent/AboutBannerComponent';
 import WhoWeAreCompnent from './routes/MainComponent/WhoWeAreCompnent';
 import SocialPrecenseComponent from './routes/MainComponent/SocialPrecenseComponent';
+import Featuresbanner from './routes/MainComponent/FeatureBanner';
+import Discoversection from './routes/MainComponent/DiscoverSection';
+import Organizesection from './routes/MainComponent/OrganizeSection';
+import Accesssection from './routes/MainComponent/AccessSection';
+import Protectsection from './routes/MainComponent/ProtectSection';
 
 
 
@@ -33,6 +38,11 @@ export default () => {
 	AboutBannerComponent(app)
 	WhoWeAreCompnent(app)
 	SocialPrecenseComponent(app)
+	Featuresbanner(app)
+	Discoversection(app)
+	Organizesection(app)
+	Accesssection(app)
+	Protectsection(app)
 	
 	return app
 }

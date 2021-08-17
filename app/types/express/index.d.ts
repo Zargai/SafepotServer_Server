@@ -14,6 +14,11 @@ import { IOurProduct } from '../../interfaces/MainComponent/OurProductComponent'
 import { IAboutBanner } from '../../interfaces/MainComponent/AboutBannerComponent';
 import { IWhoWeAre } from '../../interfaces/MainComponent/WhoWeAreComponent';
 import { ISocialPresence } from '../../interfaces/MainComponent/SocialPrecenseComponent';
+import { IAccessSection } from '../../interfaces/MainComponent/AccessSection';
+import { IDiscoverSection } from '../../interfaces/MainComponent/DiscoverSection';
+import { IFeatureBanner } from '../../interfaces/MainComponent/FeatureBanner';
+import { IOrganizeSection } from '../../interfaces/MainComponent/OrganizeSection';
+import { IProtectSection } from '../../interfaces/MainComponent/ProtectSection';
 
 
 
@@ -34,6 +39,12 @@ declare global {
     export type AboutBannerComponentModel = Model<IAboutBanner & Document>;
     export type WhoWeAreComponentModel = Model<IWhoWeAre & Document>;
     export type SocialPrecenseComponentModel = Model<ISocialPresence & Document>;
+    
+    export type AccessSectionComponentModel = Model<IAccessSection & Document>;
+    export type DiscoverSectionComponentModel = Model<IDiscoverSection & Document>;
+    export type FeatureBannerComponentModel = Model<IFeatureBanner & Document>;
+    export type OrganizeSectionComponentModel = Model<IOrganizeSection & Document>;
+    export type ProtectSectionComponentModel = Model<IProtectSection & Document>;
 
   }
   export type ObjectId = mongoose.Schema.Types.ObjectId;

@@ -1,7 +1,6 @@
 import 'reflect-metadata';
 import config from './config/index';
 import express from 'express';
-//import Logger from './lib/logger';
 
 async function startServer() {
   const app = express();
@@ -10,7 +9,6 @@ async function startServer() {
     if (err) {
       console.log(err);
       process.exit(1);
-      // return;
     }
     console.log(`
       ################################################
