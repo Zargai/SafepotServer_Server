@@ -61,11 +61,21 @@ export default async ({ expressApp }) => {
     { name: 'ContactOfficecontactcomponentModel', model: require('../models/MainComponent/ContactOfficecontactcomponent').default, };
   const ContactusofficeComponentModel =
     { name: 'ContactusofficeComponentModel', model: require('../models/MainComponent/ContactusofficeComponent').default, };
- //why Safepot
- const WhySafepotBannercomponentModel =
- { name: 'WhySafepotBannercomponentModel', model: require('../models/MainComponent/WhySafepotBanner').default, };
-const WhySafepotInfoComponentModel =
- { name: 'WhySafepotInfoComponentModel', model: require('../models/MainComponent/WhySafepotinfo').default, };
+  //why Safepot
+  const WhySafepotBannercomponentModel =
+    { name: 'WhySafepotBannercomponentModel', model: require('../models/MainComponent/WhySafepotBanner').default, };
+  const WhySafepotInfoComponentModel =
+    { name: 'WhySafepotInfoComponentModel', model: require('../models/MainComponent/WhySafepotinfo').default, };
+    //Enterprise
+    const EnterpriseBannercomponentModel =
+    { name: 'EnterpriseBannercomponentModel', model: require('../models/MainComponent/EnterpriseBanner').default, };
+  const EnterprisebusinessComponentModel =
+    { name: 'EnterprisebusinessComponentModel', model: require('../models/MainComponent/Enterprisebusiness').default, };
+    const EnterpriseInfocomponentModel =
+    { name: 'EnterpriseInfocomponentModel', model: require('../models/MainComponent/EnterpriseInfo').default, };
+  const EnterpriseServicesComponentModel =
+    { name: 'EnterpriseServicesComponentModel', model: require('../models/MainComponent/EnterpriseServices').default, };
+   
 
 
   const { agenda } = await injector({
@@ -75,9 +85,10 @@ const WhySafepotInfoComponentModel =
       DataSecurityComponentModel, TechBoxComponentModel, BlogboxComponentModel, ProductBannerComponentModel,
       GetbackupboxComponentModel, OurProductComponentModel, PickProductComponentModel, AboutBannerComponentModel
       , WhoWeAreComponentModel, SocialPrecenseComponentModel, AccessSectionComponentModel, DiscoverSectionComponentModel,
-      FeatureBannerComponentModel, OrganizeSectionComponentModel, ProtectSectionComponentModel,ContactBannerComponentModel,
-      ContactOfficecontactcomponentModel,ContactusofficeComponentModel,WhySafepotBannercomponentModel,
-      WhySafepotInfoComponentModel,
+      FeatureBannerComponentModel, OrganizeSectionComponentModel, ProtectSectionComponentModel, ContactBannerComponentModel,
+      ContactOfficecontactcomponentModel, ContactusofficeComponentModel, WhySafepotBannercomponentModel,
+      WhySafepotInfoComponentModel,EnterpriseServicesComponentModel,EnterpriseInfocomponentModel,EnterpriseBannercomponentModel,
+      EnterprisebusinessComponentModel
     ]
   });
 

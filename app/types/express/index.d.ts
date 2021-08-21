@@ -24,6 +24,10 @@ import { IContactUscontact } from '../../interfaces/MainComponent/ContactOfficec
 import { IContactUsOffice } from '../../interfaces/MainComponent/ContactusofficeComponent';
 import { IWhySafepotBanner } from '../../interfaces/MainComponent/WhySafepotBanner';
 import { IWhySafepotInfo } from '../../interfaces/MainComponent/WhySafepotinfo';
+import { IEnterpriseBanner } from '../../interfaces/MainComponent/EnterpriseBanner';
+import {  IEnterpriseInfo } from '../../interfaces/MainComponent/EnterpriseInfo';
+import { IEnterpriseServices } from '../../interfaces/MainComponent/EnterpriseServices';
+import { IEnterpriseBusiness } from '../../interfaces/MainComponent/Enterprisebusiness';
 
 
 
@@ -56,6 +60,14 @@ declare global {
     //why Safepot
     export type WhySafepotBannercomponentModel = Model<IWhySafepotBanner & Document>;
     export type WhySafepotInfoComponentModel = Model<IWhySafepotInfo & Document>;
+    //Enterprise
+    export type EnterpriseBannercomponentModel = Model<IEnterpriseBanner & Document>;
+    export type EnterprisebusinessComponentModel = Model<IEnterpriseBusiness & Document>;
+    export type EnterpriseInfocomponentModel = Model<IEnterpriseInfo & Document>;
+    export type EnterpriseServicesComponentModel = Model<IEnterpriseServices & Document>;
+
+
+
   }
   export type ObjectId = mongoose.Schema.Types.ObjectId;
 }
