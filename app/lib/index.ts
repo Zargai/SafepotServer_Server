@@ -61,7 +61,11 @@ export default async ({ expressApp }) => {
     { name: 'ContactOfficecontactcomponentModel', model: require('../models/MainComponent/ContactOfficecontactcomponent').default, };
   const ContactusofficeComponentModel =
     { name: 'ContactusofficeComponentModel', model: require('../models/MainComponent/ContactusofficeComponent').default, };
-
+ //why Safepot
+ const WhySafepotBannercomponentModel =
+ { name: 'WhySafepotBannercomponentModel', model: require('../models/MainComponent/WhySafepotBanner').default, };
+const WhySafepotInfoComponentModel =
+ { name: 'WhySafepotInfoComponentModel', model: require('../models/MainComponent/WhySafepotinfo').default, };
 
 
   const { agenda } = await injector({
@@ -72,8 +76,8 @@ export default async ({ expressApp }) => {
       GetbackupboxComponentModel, OurProductComponentModel, PickProductComponentModel, AboutBannerComponentModel
       , WhoWeAreComponentModel, SocialPrecenseComponentModel, AccessSectionComponentModel, DiscoverSectionComponentModel,
       FeatureBannerComponentModel, OrganizeSectionComponentModel, ProtectSectionComponentModel,ContactBannerComponentModel,
-      ContactOfficecontactcomponentModel,ContactusofficeComponentModel
-
+      ContactOfficecontactcomponentModel,ContactusofficeComponentModel,WhySafepotBannercomponentModel,
+      WhySafepotInfoComponentModel,
     ]
   });
 

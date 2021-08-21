@@ -22,6 +22,8 @@ import { IProtectSection } from '../../interfaces/MainComponent/ProtectSection';
 import { IContactUsBanner } from '../../interfaces/MainComponent/ContactBannerComponent';
 import { IContactUscontact } from '../../interfaces/MainComponent/ContactOfficecontactcomponent';
 import { IContactUsOffice } from '../../interfaces/MainComponent/ContactusofficeComponent';
+import { IWhySafepotBanner } from '../../interfaces/MainComponent/WhySafepotBanner';
+import { IWhySafepotInfo } from '../../interfaces/MainComponent/WhySafepotinfo';
 
 
 
@@ -48,10 +50,12 @@ declare global {
     export type OrganizeSectionComponentModel = Model<IOrganizeSection & Document>;
     export type ProtectSectionComponentModel = Model<IProtectSection & Document>;
     //contact us
-    export type ContactBannerComponent = Model<IContactUsBanner & Document>;
-    export type ContactOfficecontactcomponent = Model<IContactUscontact & Document>;
-    export type ContactusofficeComponent = Model<IContactUsOffice & Document>;
-
+    export type ContactBannerComponentModel = Model<IContactUsBanner & Document>;
+    export type ContactOfficecontactcomponentModel = Model<IContactUscontact & Document>;
+    export type ContactusofficeComponentModel = Model<IContactUsOffice & Document>;
+    //why Safepot
+    export type WhySafepotBannercomponentModel = Model<IWhySafepotBanner & Document>;
+    export type WhySafepotInfoComponentModel = Model<IWhySafepotInfo & Document>;
   }
   export type ObjectId = mongoose.Schema.Types.ObjectId;
 }

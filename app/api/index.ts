@@ -22,6 +22,9 @@ import Protectsection from './routes/MainComponent/ProtectSection';
 import ContactBannerComponent from './routes/MainComponent/ContactBannerComponent';
 import ContactOfficecontactcomponent from './routes/MainComponent/ContactOfficecontactcomponent';
 import ContactusofficeComponent from './routes/MainComponent/ContactusofficeComponent';
+//why Safepot
+import WhySafepotBannercomponent from './routes/MainComponent/WhySafepotBanner';
+import WhySafepotInfoComponent from './routes/MainComponent/WhySafepotinfo';
 
 
 // guaranteed to get dependencies
@@ -50,5 +53,11 @@ export default () => {
 	ContactBannerComponent(app)
 	ContactOfficecontactcomponent(app)
 	ContactusofficeComponent(app)
+	//WhySafePot
+	WhySafepotBannercomponent(app)
+	WhySafepotInfoComponent(app)
+
+
+
 	return app
 }
