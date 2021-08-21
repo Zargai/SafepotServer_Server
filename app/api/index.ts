@@ -18,7 +18,10 @@ import Discoversection from './routes/MainComponent/DiscoverSection';
 import Organizesection from './routes/MainComponent/OrganizeSection';
 import Accesssection from './routes/MainComponent/AccessSection';
 import Protectsection from './routes/MainComponent/ProtectSection';
-
+//contact us
+import ContactBannerComponent from './routes/MainComponent/ContactBannerComponent';
+import ContactOfficecontactcomponent from './routes/MainComponent/ContactOfficecontactcomponent';
+import ContactusofficeComponent from './routes/MainComponent/ContactusofficeComponent';
 
 
 // guaranteed to get dependencies
@@ -43,6 +46,9 @@ export default () => {
 	Organizesection(app)
 	Accesssection(app)
 	Protectsection(app)
-	
+	//contact us
+	ContactBannerComponent(app)
+	ContactOfficecontactcomponent(app)
+	ContactusofficeComponent(app)
 	return app
 }

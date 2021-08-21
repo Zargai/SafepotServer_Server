@@ -19,6 +19,9 @@ import { IDiscoverSection } from '../../interfaces/MainComponent/DiscoverSection
 import { IFeatureBanner } from '../../interfaces/MainComponent/FeatureBanner';
 import { IOrganizeSection } from '../../interfaces/MainComponent/OrganizeSection';
 import { IProtectSection } from '../../interfaces/MainComponent/ProtectSection';
+import { IContactUsBanner } from '../../interfaces/MainComponent/ContactBannerComponent';
+import { IContactUscontact } from '../../interfaces/MainComponent/ContactOfficecontactcomponent';
+import { IContactUsOffice } from '../../interfaces/MainComponent/ContactusofficeComponent';
 
 
 
@@ -38,13 +41,16 @@ declare global {
     export type PickProductComponentModel = Model<IPickProduct & Document>;
     export type AboutBannerComponentModel = Model<IAboutBanner & Document>;
     export type WhoWeAreComponentModel = Model<IWhoWeAre & Document>;
-    export type SocialPrecenseComponentModel = Model<ISocialPresence & Document>;
-    
+    export type SocialPrecenseComponentModel = Model<ISocialPresence & Document>; 
     export type AccessSectionComponentModel = Model<IAccessSection & Document>;
     export type DiscoverSectionComponentModel = Model<IDiscoverSection & Document>;
     export type FeatureBannerComponentModel = Model<IFeatureBanner & Document>;
     export type OrganizeSectionComponentModel = Model<IOrganizeSection & Document>;
     export type ProtectSectionComponentModel = Model<IProtectSection & Document>;
+    //contact us
+    export type ContactBannerComponent = Model<IContactUsBanner & Document>;
+    export type ContactOfficecontactcomponent = Model<IContactUscontact & Document>;
+    export type ContactusofficeComponent = Model<IContactUsOffice & Document>;
 
   }
   export type ObjectId = mongoose.Schema.Types.ObjectId;

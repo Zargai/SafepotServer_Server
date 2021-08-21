@@ -44,7 +44,6 @@ export default async ({ expressApp }) => {
 
   const SocialPrecenseComponentModel =
     { name: 'SocialPrecenseComponentModel', model: require('../models/MainComponent/SocialPrecenseComponent').default, };
-  //
   const AccessSectionComponentModel =
     { name: 'AccessSectionComponentModel', model: require('../models/MainComponent/AccessSection').default, };
   const DiscoverSectionComponentModel =
@@ -55,6 +54,13 @@ export default async ({ expressApp }) => {
     { name: 'OrganizeSectionComponentModel', model: require('../models/MainComponent/OrganizeSection').default, };
   const ProtectSectionComponentModel =
     { name: 'ProtectSectionComponentModel', model: require('../models/MainComponent/ProtectSection').default, };
+  //Contact Us
+  const ContactBannerComponentModel =
+    { name: 'ContactBannerComponentModel', model: require('../models/MainComponent/ContactBannerComponent').default, };
+  const ContactOfficecontactcomponentModel =
+    { name: 'ContactOfficecontactcomponentModel', model: require('../models/MainComponent/ContactOfficecontactcomponent').default, };
+  const ContactusofficeComponentModel =
+    { name: 'ContactusofficeComponentModel', model: require('../models/MainComponent/ContactusofficeComponent').default, };
 
 
 
@@ -65,7 +71,8 @@ export default async ({ expressApp }) => {
       DataSecurityComponentModel, TechBoxComponentModel, BlogboxComponentModel, ProductBannerComponentModel,
       GetbackupboxComponentModel, OurProductComponentModel, PickProductComponentModel, AboutBannerComponentModel
       , WhoWeAreComponentModel, SocialPrecenseComponentModel, AccessSectionComponentModel, DiscoverSectionComponentModel,
-      FeatureBannerComponentModel, OrganizeSectionComponentModel, ProtectSectionComponentModel
+      FeatureBannerComponentModel, OrganizeSectionComponentModel, ProtectSectionComponentModel,ContactBannerComponentModel,
+      ContactOfficecontactcomponentModel,ContactusofficeComponentModel
 
     ]
   });
