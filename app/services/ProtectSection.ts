@@ -34,8 +34,14 @@ export default class ProtectSectioncomponentService {
   //to update 
   public async update(InputDTO: IProtectSectionInput): Promise<{ message: string, success: boolean }> {
     try {
-      console.log("inputDTO", InputDTO)
-     const  id =InputDTO.id
+      console.log("inputDTOprotect", InputDTO)
+      var id ;
+      if(InputDTO.pagetitle ){
+         id =1;
+      }else{
+      id =InputDTO.id
+       }
+       console.log("idd",id)
       const Record = await this.ProtectSectionComponentModel.updateOne({ "id": id }, { ...InputDTO })
       if (Record.nModified <= 0) {
         return { message: "No Modification", success: false }

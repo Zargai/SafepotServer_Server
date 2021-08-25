@@ -20,7 +20,7 @@ export default class EnterpriseBannercomponentService {
   //to update 
   public async update(InputDTO: IEnterpriseBannerInput): Promise<{ message: string, success: boolean }> {
     try {
-      console.log("inputDTO", InputDTO)
+      console.log("inputDTObanner", InputDTO)
       const Record = await this.EnterpriseBannercomponentModel.updateOne({ "_id": "6121081901796624840955ba" },{ ...InputDTO })
       if (Record.nModified <= 0) {
         return { message: "No Modification", success: false }

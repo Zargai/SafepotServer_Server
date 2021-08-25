@@ -35,7 +35,7 @@ export default class ContactOfficecontactcomponentService {
   //to update 
   public async update(InputDTO: IContactUscontactInput): Promise<{ message: string, success: boolean }> {
     try {
-      console.log("inputDTO", InputDTO)
+      console.log("inputDTOcontact", InputDTO)
       const id =InputDTO.id
        
       const Record = await this.ContactOfficecontactcomponentModel.updateOne({ "id": id }, { ...InputDTO })
