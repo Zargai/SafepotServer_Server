@@ -28,8 +28,8 @@ export default (app: Router) => {
     route.post('/signin', async (req: Request, res: Response, next: NextFunction) => {
         try {
             console.log('body', req.body)
-            const { systemId, password } = req.body;
-            const { user, token } = await authServiceInstance.SignIn(systemId, password);
+            const { email, password } = req.body;
+            const { user, token } = await authServiceInstance.SignIn(email, password);
             console.log("user in route", user)
             return res.json({ user, token }).status(200);
 
@@ -105,7 +105,10 @@ export default (app: Router) => {
             const error = new Error('Please upload a file')
             return next(error)
         }
+      
         return res.status(201).json({ Image: req.file.filename, })
     })
+
+   
 }
 

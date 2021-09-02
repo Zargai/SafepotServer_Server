@@ -30,7 +30,8 @@ import EnterpriseBannercomponent from './routes/MainComponent/EnterpriseBanner';
 import EnterpriseInfocomponent from './routes/MainComponent/EnterpriseInfo';
 import EnterpriseServicesComponent from './routes/MainComponent/EnterpriseServices';
 import EnterprisebusinessComponent from './routes/MainComponent/Enterprisebusiness';
-
+//IBanner
+import IBannerCComponent from './routes/MainComponent/IBannerCComponent';
 // guaranteed to get dependencies
 export default () => {
 	const app = Router();
@@ -65,6 +66,8 @@ export default () => {
 	EnterpriseInfocomponent(app)
 	EnterpriseServicesComponent(app)
 	EnterprisebusinessComponent(app)
+	//IBanner
+	IBannerCComponent(app)
 
 	return app
 }

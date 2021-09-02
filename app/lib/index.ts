@@ -75,7 +75,9 @@ export default async ({ expressApp }) => {
     { name: 'EnterpriseInfocomponentModel', model: require('../models/MainComponent/EnterpriseInfo').default, };
   const EnterpriseServicesComponentModel =
     { name: 'EnterpriseServicesComponentModel', model: require('../models/MainComponent/EnterpriseServices').default, };
-   
+   //IBannerC
+  const IBannerCComponentModel =
+    { name: 'IBannerCComponentModel', model: require('../models/MainComponent/IBannerC').default, };
 
 
   const { agenda } = await injector({
@@ -88,7 +90,7 @@ export default async ({ expressApp }) => {
       FeatureBannerComponentModel, OrganizeSectionComponentModel, ProtectSectionComponentModel, ContactBannerComponentModel,
       ContactOfficecontactcomponentModel, ContactusofficeComponentModel, WhySafepotBannercomponentModel,
       WhySafepotInfoComponentModel,EnterpriseServicesComponentModel,EnterpriseInfocomponentModel,EnterpriseBannercomponentModel,
-      EnterprisebusinessComponentModel
+      EnterprisebusinessComponentModel, IBannerCComponentModel
     ]
   });
 
