@@ -32,6 +32,8 @@ import EnterpriseServicesComponent from './routes/MainComponent/EnterpriseServic
 import EnterprisebusinessComponent from './routes/MainComponent/Enterprisebusiness';
 //IBanner
 import IBannerCComponent from './routes/MainComponent/IBannerCComponent';
+//IPricing
+import IPricingComponent from './routes/MainComponent/IPricingComponent';
 // guaranteed to get dependencies
 export default () => {
 	const app = Router();
@@ -68,6 +70,8 @@ export default () => {
 	EnterprisebusinessComponent(app)
 	//IBanner
 	IBannerCComponent(app)
+	//Ipricing
+	IPricingComponent(app)
 
 	return app
 }

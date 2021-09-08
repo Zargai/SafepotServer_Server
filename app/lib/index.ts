@@ -79,6 +79,10 @@ export default async ({ expressApp }) => {
   const IBannerCComponentModel =
     { name: 'IBannerCComponentModel', model: require('../models/MainComponent/IBannerC').default, };
 
+  //IBannerC
+  const IPricingComponentModel =
+    { name: 'IPricingComponentModel', model: require('../models/MainComponent/IPricing').default, };
+
 
   const { agenda } = await injector({
     mongoConnection,
@@ -90,7 +94,7 @@ export default async ({ expressApp }) => {
       FeatureBannerComponentModel, OrganizeSectionComponentModel, ProtectSectionComponentModel, ContactBannerComponentModel,
       ContactOfficecontactcomponentModel, ContactusofficeComponentModel, WhySafepotBannercomponentModel,
       WhySafepotInfoComponentModel,EnterpriseServicesComponentModel,EnterpriseInfocomponentModel,EnterpriseBannercomponentModel,
-      EnterprisebusinessComponentModel, IBannerCComponentModel
+      EnterprisebusinessComponentModel, IBannerCComponentModel, IPricingComponentModel
     ]
   });
 
