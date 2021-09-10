@@ -93,13 +93,17 @@ export default (app: Router) => {
 
     //for image uploading defining name of image and path of image
     var storage = multer.diskStorage({
-      //  destination: function (req, file, cb){cb(null, 'uploads/')},
-        destination: function (req, file, cb){cb(null, '../safepots-dashboard/public/uploads')},
-        filename: function(req, file, cb){ cb(null, 'image-card-'+  Date.now() +'-'+ file.originalname)}})
+        destination: function (req, file, cb){ cb(null, 'uploads/')},
+        // destination: function (req, file, cb){cb(null, '../safepots-dashboard/public/uploads')},
+        filename: function(req, file, cb){ 
+            console.log(file)
+            cb(null, 'image-card-'+  Date.now() +'-'+ file.originalname)}})
             
           var upload= multer({ storage: storage })
     //API for uploading image
     route.post('/upload', upload.single('image'), async (req, res, next) => {
+        console.log(req.file)
+        console.log("*******")
         const file = req.file;
         if (!file) {
             const error = new Error('Please upload a file')

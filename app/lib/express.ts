@@ -20,13 +20,12 @@ export default ({ app }: { app: express.Application }) => {
     extended: true
     
     }));
-
   /* Setting up basics */
   app.enable('trust proxy');
   app.use(cors());
   app.use(require('method-override')());
   app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit:50000}))
+  app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 100000000 }));
   app.use(responseTime());
   
 

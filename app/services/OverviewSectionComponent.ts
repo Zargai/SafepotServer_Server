@@ -20,8 +20,9 @@ export default class IOverviewComponentModelServices {
     //to update 
     public async update(InputDTO: IOverviewSectionInput): Promise<{ message: string, success: boolean }> {
         try {
-            console.log("inputDTO", InputDTO)
+            console.log("inputDTOupdate", InputDTO)
             const { id } = { ...InputDTO }
+            console.log("id", id)
             const Record = await this.OverviewSectionComponentModel.updateOne({ "id": id }, { ...InputDTO })
             if (Record.nModified <= 0) {
                 return { message: "No Modification", success: false }
