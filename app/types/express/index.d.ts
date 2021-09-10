@@ -30,6 +30,7 @@ import { IEnterpriseServices } from '../../interfaces/MainComponent/EnterpriseSe
 import { IEnterpriseBusiness } from '../../interfaces/MainComponent/Enterprisebusiness';
 import { IBannerC } from '../../interfaces/MainComponent/IBannerC';
 import { IPricing } from '../../interfaces/MainComponent/IPricing';
+import { IOverviewSection } from '../../interfaces/MainComponent/IOverviewSectionComponent';
 
 
 
@@ -71,6 +72,8 @@ declare global {
     export type IBannerCComponentModel = Model<IBannerC & Document>;
     //IPricing
     export type IPricingComponentModel = Model<IPricing & Document>;
+    //overviewsection
+    export type OverviewSectionComponentModel = Model<IOverviewSection & Document>;
 
   }
   export type ObjectId = mongoose.Schema.Types.ObjectId;

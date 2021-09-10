@@ -21,7 +21,11 @@ export default class SocialPrecensecomponentService {
         title:InputDTO.title || '',
         image:InputDTO.image || '',
         description:InputDTO.description || '',
-        pagetitle:InputDTO.pagetitle || ''
+        pagetitle:InputDTO.pagetitle || '',
+        fblink: InputDTO.fblink || '',
+        youtubelink: InputDTO.youtubelink || '',
+        linkinlink: InputDTO.linkinlink || '',
+
       }
       console.log("dataaa",data)
        const Record = await this.SocialPrecenseComponentModel.create({...data});

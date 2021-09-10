@@ -34,6 +34,8 @@ import EnterprisebusinessComponent from './routes/MainComponent/Enterprisebusine
 import IBannerCComponent from './routes/MainComponent/IBannerCComponent';
 //IPricing
 import IPricingComponent from './routes/MainComponent/IPricingComponent';
+import IOverviewSectionComponent from './routes/MainComponent/OverviewSectionComponent';
+
 // guaranteed to get dependencies
 export default () => {
 	const app = Router();
@@ -72,6 +74,8 @@ export default () => {
 	IBannerCComponent(app)
 	//Ipricing
 	IPricingComponent(app)
+	//IOverviewsection
+	IOverviewSectionComponent(app)
 
 	return app
 }

@@ -5,6 +5,9 @@ export interface ISocialPresence {
     title?: string;
     image?: string;
     description?: string;
+    fblink?: string;
+    youtubelink?: string;
+    linkinlink?: string;
 }
 
 export interface ISocialPresenceInput {
@@ -13,4 +16,7 @@ export interface ISocialPresenceInput {
     title?: string;
     image?: string;
     description?: string;
+    fblink?: string;
+    youtubelink?: string;
+    linkinlink?: string;
 }
