@@ -6,7 +6,7 @@ import { IHeader } from '../../interfaces/MainComponent/IHeader';
 import { IUnit } from '../../interfaces/MainComponent/UnitsboxComponent';
 import { IDataSecurity } from '../../interfaces/MainComponent/DataSecurityComponent';
 import { ITechBox } from '../../interfaces/MainComponent/Techboxcomponent';
-import { IBlogBox } from '../../interfaces/MainComponent/IBlogBoxComponent';
+import { IBlogBox, IBlogBoxInput } from '../../interfaces/MainComponent/IBlogBoxComponent';
 import { IProductBanner } from '../../interfaces/MainComponent/ProductBannerComponent';
 import { IGetbackupbox } from '../../interfaces/MainComponent/GetBackupBoxComponent';
 import { IPickProduct } from '../../interfaces/MainComponent/PickProductComponent';
@@ -31,7 +31,7 @@ import { IEnterpriseBusiness } from '../../interfaces/MainComponent/Enterprisebu
 import { IBannerC } from '../../interfaces/MainComponent/IBannerC';
 import { IPricing } from '../../interfaces/MainComponent/IPricing';
 import { IOverviewSection } from '../../interfaces/MainComponent/IOverviewSectionComponent';
-
+import { IBlogsection } from '../../interfaces/MainComponent/IBlogsectionComponent';
 
 
 declare global {
@@ -74,6 +74,9 @@ declare global {
     export type IPricingComponentModel = Model<IPricing & Document>;
     //overviewsection
     export type OverviewSectionComponentModel = Model<IOverviewSection & Document>;
+    //BlogComponent Model
+    
+    export type IBlogsectionComponentModel = Model<IBlogsection & Document>;
 
   }
   export type ObjectId = mongoose.Schema.Types.ObjectId;

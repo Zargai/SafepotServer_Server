@@ -35,6 +35,7 @@ import IBannerCComponent from './routes/MainComponent/IBannerCComponent';
 //IPricing
 import IPricingComponent from './routes/MainComponent/IPricingComponent';
 import IOverviewSectionComponent from './routes/MainComponent/OverviewSectionComponent';
+import IBlogsectionComponent from './routes/MainComponent/IBlogsectionComponent';
 
 // guaranteed to get dependencies
 export default () => {
@@ -76,6 +77,8 @@ export default () => {
 	IPricingComponent(app)
 	//IOverviewsection
 	IOverviewSectionComponent(app)
+	//IBlogsectionComponent
+	IBlogsectionComponent(app)
 
 	return app
 }

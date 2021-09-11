@@ -85,6 +85,9 @@ export default async ({ expressApp }) => {
   //overview section
   const OverviewSectionComponentModel =
     { name: 'OverviewSectionComponentModel', model: require('../models/MainComponent/IOverviewSectionComponent').default, };
+  //IBlogsectionComponent
+  const IBlogsectionComponentModel =
+    { name: 'IBlogsectionComponentModel', model: require('../models/MainComponent//IBlogsectionComponent').default, };
 
 
   const { agenda } = await injector({
@@ -98,6 +101,7 @@ export default async ({ expressApp }) => {
       ContactOfficecontactcomponentModel, ContactusofficeComponentModel, WhySafepotBannercomponentModel,
       WhySafepotInfoComponentModel,EnterpriseServicesComponentModel,EnterpriseInfocomponentModel,EnterpriseBannercomponentModel,
       EnterprisebusinessComponentModel, IBannerCComponentModel, IPricingComponentModel, OverviewSectionComponentModel
+      , IBlogsectionComponentModel
     ]
   });
 
