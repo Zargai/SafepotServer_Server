@@ -37,6 +37,7 @@ import IPricingComponent from "./routes/MainComponent/IPricingComponent";
 import IOverviewSectionComponent from "./routes/MainComponent/OverviewSectionComponent";
 import IBlogsectionComponent from "./routes/MainComponent/IBlogsectionComponent";
 import IPlanepricingadmincomponent from "./routes/MainComponent/IPlanepricingadmincomponent";
+import PaymentGateway from "./routes/PaymentGateway";
 
 // guaranteed to get dependencies
 export default () => {
@@ -81,6 +82,8 @@ export default () => {
   //IBlogsectionComponent
   IBlogsectionComponent(app);
   IPlanepricingadmincomponent(app);
+  //paymentAPI
+  PaymentGateway(app)
 
   return app;
 };

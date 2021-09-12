@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@brrinta/authorizenet-ts@^1.1.0":
+  "integrity" "sha512-TjP7MFkMvayrKUBtmajiPSvjmvrt1Bf19mekL+2Pp+4Gb8786RYGAXmNjXtlrXfZniRlqNfnFqaDfRlrNBSP8g=="
+  "resolved" "https://registry.npmjs.org/@brrinta/authorizenet-ts/-/authorizenet-ts-1.1.0.tgz"
+  "version" "1.1.0"
+  dependencies:
+    "authorizenet" "^1.0.7"
+
 "@hapi/address@2.x.x":
   "integrity" "sha512-O4QDrx+JoGKZc6aN64L04vqa7e41tIiLU+OvKdcYaEMP97UttL0f9GIi9/0A4WAMx0uBd6SidDIhktZhgOcN8Q=="
   "resolved" "https://registry.npmjs.org/@hapi/address/-/address-2.1.2.tgz"
@@ -300,7 +307,7 @@
   "resolved" "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz"
   "version" "0.4.0"
 
-"authorizenet@^1.0.8":
+"authorizenet@^1.0.7", "authorizenet@^1.0.8":
   "integrity" "sha512-n07S6V5EgbjmdIqXfK5pnvFx0SVZd/b5BKuY5K8MOBTaWjLZPhhrEl8D2QCqK3y+EyIRCKhYmtJFhgPo4Ac9mw=="
   "resolved" "https://registry.npmjs.org/authorizenet/-/authorizenet-1.0.8.tgz"
   "version" "1.0.8"

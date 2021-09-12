@@ -6,6 +6,7 @@ import Auth from "../middleware/auth";
 const multer = require("multer");
 const route = Router();
 
+
 export default (app: Router) => {
   app.use("/auth", route);
   const authServiceInstance = Container.get(AuthService);
@@ -142,4 +143,8 @@ export default (app: Router) => {
 
     return res.status(201).json({ Image: req.file.filename });
   });
+
+
+ 
+
 };
