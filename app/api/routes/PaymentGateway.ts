@@ -1,9 +1,7 @@
 import { Router, Request, Response, NextFunction } from "express";
 
- import   ApiContracts  from 'authorizenet'
-// import * as ApiControllers from 'authorizenet';
-// import * as ApiControllers from '../middleware/';
-import test = require('../middleware/Authorized');
+ 
+import PaymentFunction = require('../middleware/Authorized');
 const route = Router();
 
 const loginId = "5w7M36w6G73v4Xsg";
@@ -19,9 +17,10 @@ export default (app: Router) => {
      
       try {
         
-        const  response = await test.getMerchantDetails(req.body);
-        console.log("results==>", response)
-        res.status(200).json({ "responce": response});
+         const response = await PaymentFunction.getMerchantDetails(req.body,function (data){
+           res.status(200).json({ "responce": data });
+         });
+          
       } catch (e) {
         console.log(e);
         return next(e);

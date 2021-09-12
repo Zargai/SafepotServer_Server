@@ -11,70 +11,83 @@ const ApiControllers = require('authorizenet').APIControllers;
 
 //  exports.PaymentFunction = async (InputDTO) => {
 //  PaymentFunction = async (InputDTO) => {
-async function getMerchantDetails(InputDTO) {
-        console.log("payment function hit")
+exports.getMerchantDetails = async (InputDTO, callback)=> {
     const { cc, cvv, expire, amount } = InputDTO;
 
     const merchantAuthenticationType = new ApiContracts.MerchantAuthenticationType();
     merchantAuthenticationType.setName(loginId);
     merchantAuthenticationType.setTransactionKey(transactionKey);
-    
-    var getRequest = new ApiContracts.GetMerchantDetailsRequest();
-    getRequest.setMerchantAuthentication(merchantAuthenticationType);
 
-    console.log(JSON.stringify(getRequest.getJSON(), null, 2));
+    const creditCard = new ApiContracts.CreditCardType();
+    creditCard.setCardNumber(cc);
+    creditCard.setExpirationDate(expire);
+    creditCard.setCardCode(cvv);
 
-    var ctrl = new ApiControllers.GetMerchantDetailsController(getRequest.getJSON());
-     console.log("ctrl", ctrl);
-    ctrl.execute(async function () {
+    const paymentType = new ApiContracts.PaymentType();
+    paymentType.setCreditCard(creditCard);
 
-        var apiResponse = ctrl.getResponse();
-        
-        var response =  await new ApiContracts.GetMerchantDetailsResponse(apiResponse);
-       
-        console.log(JSON.stringify(response, null, 2));
+    const transactionSetting = new ApiContracts.SettingType();
+    transactionSetting.setSettingName('recurringBilling');
+    transactionSetting.setSettingValue('false');
 
-        if (response != null) {
-            if (response.getMessages().getResultCode() == ApiContracts.MessageTypeEnum.OK) {
-                console.log('Merchant Name : ' + response.getMerchantName());
-                console.log('Gateway Id : ' + response.getGatewayId());
-                console.log('Processors : ');
+    const transactionSettingList = [];
+    transactionSettingList.push(transactionSetting);
 
-                var processors = response.getProcessors().getProcessor();
-                for (var i = 0; i < processors.length; i++) {
-                    console.log("\t" + processors[i].getName());
+    const transactionSettings = new ApiContracts.ArrayOfSetting();
+    transactionSettings.setSetting(transactionSettingList);
+
+    const transactionRequestType = new ApiContracts.TransactionRequestType();
+    transactionRequestType.setTransactionType(ApiContracts.TransactionTypeEnum.AUTHCAPTURETRANSACTION);
+    transactionRequestType.setPayment(paymentType);
+    transactionRequestType.setAmount(amount);
+    transactionRequestType.setTransactionSettings(transactionSettings);
+
+    const createRequest = new ApiContracts.CreateTransactionRequest();
+    createRequest.setMerchantAuthentication(merchantAuthenticationType);
+    createRequest.setTransactionRequest(transactionRequestType);
+
+    const ctrl = new ApiControllers.CreateTransactionController(createRequest.getJSON());
+    const finalresp = "";
+    ctrl.execute(() => {
+        const apiResponse = ctrl.getResponse();
+        const response = new ApiContracts.CreateTransactionResponse(apiResponse);
+
+        if (response !== null) {
+            if (response.getMessages().getResultCode() === ApiContracts.MessageTypeEnum.OK) {
+                if (response.getTransactionResponse().getMessages() !== null) {
+                    callback({ success: 'Transaction was successful.' });
+                } else {
+                    if (response.getTransactionResponse().getErrors() !== null) {
+                        let code = response.getTransactionResponse().getErrors().getError()[0].getErrorCode();
+                        let text = response.getTransactionResponse().getErrors().getError()[0].getErrorText();
+                        callback({
+                            error: `${code}: ${text}`
+                        });
+                    } else {
+                        callback({ error: 'Transaction failed.' });
+                    }
                 }
+            } else {
+                if (response.getTransactionResponse() !== null && response.getTransactionResponse().getErrors() !== null) {
+                    let code = response.getTransactionResponse().getErrors().getError()[0].getErrorCode();
+                    let text = response.getTransactionResponse().getErrors().getError()[0].getErrorText();
+                    callback({
+                        error: `${code}: ${text}`
+                    });
+                } else {
+                    let code = response.getMessages().getMessage()[0].getCode();
+                    let text = response.getMessages().getMessage()[0].getText();
+                    callback({
+                        error: `${code}: ${text}`
+                    });
+                }
+            }
 
-                console.log('Message Code : ' + response.getMessages().getMessage()[0].getCode());
-                console.log('Message Text : ' + response.getMessages().getMessage()[0].getText());
-                // return ({
-                //     MessageCod :   response.getMessages().getMessage()[0].getCode(),
-                //     MessageText :   response.getMessages().getMessage()[0].getText()
-                // });
-            }
-            else {
-                console.log('Result Code: ' + response.getMessages().getResultCode());
-                console.log('Error Code: ' + response.getMessages().getMessage()[0].getCode());
-                console.log('Error message: ' + response.getMessages().getMessage()[0].getText());
-                // return ({
-                //     ResultCode  : response.getMessages().getResultCode(),
-                //     ErroCode  : response.getMessages().getMessage()[0].getCode(),
-                //     Errormessage  : response.getMessages().getMessage()[0].getText()
-                // });
-            }
-            console.log('*********Responce********');
-            console.log(response);
-            return { response };
+        } else {
+            callback({ error: 'No response.' });
         }
-        else {
-            console.log('Null Response.');
-             return ({responce:'Null Response'});
-            
-            // return { response };
-        }
-        
-         
     });
+   //return ctrl;
 }
 
 if (require.main === module) {
@@ -83,4 +96,4 @@ if (require.main === module) {
     });
 }
 
-module.exports.getMerchantDetails = getMerchantDetails;
+// module.exports.getMerchantDetails = getMerchantDetails;
