@@ -18,7 +18,7 @@ export default (app: Router) => {
       try {
         
          const response = await PaymentFunction.getMerchantDetails(req.body,function (data){
-           res.status(200).json({ "responce": data });
+           res.status(200).json({ ...data });
          });
           
       } catch (e) {
